@@ -10,7 +10,7 @@ class Glide < Formula
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.mycompany.com/foo/bar/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/einstack/glide/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_darwin_arm64.tar.gz", using: CurlDownloadStrategy
       sha256 "5be69d5f9c08d0fecad3fea9c9e29dc614a24f3e1ede8af5176ce5a493e807c8"
 
       def install
@@ -18,7 +18,7 @@ class Glide < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.mycompany.com/foo/bar/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/einstack/glide/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_darwin_amd64.tar.gz", using: CurlDownloadStrategy
       sha256 "130ce5303dfe71221245ea02790f696be1c1ddc8d27093348b0f323a686970f8"
 
       def install
@@ -29,7 +29,7 @@ class Glide < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.mycompany.com/foo/bar/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/einstack/glide/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_linux_arm64.tar.gz", using: CurlDownloadStrategy
       sha256 "9b6b56d17b54b5cd71741a9672150ffea046dca1bf5aa307968c47bf24f0ce97"
 
       def install
@@ -37,7 +37,7 @@ class Glide < Formula
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.mycompany.com/foo/bar/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      url "https://github.com/einstack/glide/releases/download/0.0.1-rc.2/glide_v0.0.1-rc.2_linux_amd64.tar.gz", using: CurlDownloadStrategy
       sha256 "0322e27fa7cec0b39a38809c25cc924c4d6abf9d4310a055b098f68c132c8e0f"
 
       def install
