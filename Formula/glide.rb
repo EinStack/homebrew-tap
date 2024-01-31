@@ -9,17 +9,17 @@ class Glide < Formula
   license "Apache-2.0"
 
   on_macos do
-    if Hardware::CPU.arm?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "6374399c1e7dbb1015854bb24519a45d5a2a89d165e924c18b7c95b9063e1aa2"
+    if Hardware::CPU.intel?
+      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "4b2d1686762ea1fe6399a7b77edf37342425155db9714d61890213445e3405ec"
 
       def install
         bin.install "glide"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "00328818d561e00d9e872f68178cfd87d1a537d358bc65f3e33020260f11aee9"
+    if Hardware::CPU.arm?
+      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "3562be98698aa336639e178595fee2f7a5f646788838bb5c2022ed95e18ba936"
 
       def install
         bin.install "glide"
@@ -30,7 +30,7 @@ class Glide < Formula
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "29a8d10435049fed1fff69ec623fb3fbc3c1d54ff71e554db956a5ed8b08b921"
+      sha256 "b9eef2729b89580d00c71c2f5e752dbd47d60f485773142edb0e7cd75e88f862"
 
       def install
         bin.install "glide"
@@ -38,7 +38,7 @@ class Glide < Formula
     end
     if Hardware::CPU.intel?
       url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "32dd550cf974bcb0250f39a6d9de39aa920ef36ece2bb30af7c666b90f84ec9b"
+      sha256 "e3896754b2c5d52aa72d1aa4bc9d29368fc10886c2cc95b9e69e27e22b9abfdb"
 
       def install
         bin.install "glide"
