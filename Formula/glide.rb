@@ -5,21 +5,21 @@
 class Glide < Formula
   desc "A Lightweight, Cloud-Native LLM Gateway"
   homepage "https://github.com/EinStack/glide"
-  version "0.0.1"
+  version "0.0.2-rc.1"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "4b2d1686762ea1fe6399a7b77edf37342425155db9714d61890213445e3405ec"
+      url "https://github.com/einstack/glide/releases/download/0.0.2-rc.1/glide_v0.0.2-rc.1_darwin_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "5be3dc7be162ab0d210f49b9e9a15991bf8d044212f752c910919eb03e0a7df0"
 
       def install
         bin.install "glide"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "3562be98698aa336639e178595fee2f7a5f646788838bb5c2022ed95e18ba936"
+      url "https://github.com/einstack/glide/releases/download/0.0.2-rc.1/glide_v0.0.2-rc.1_darwin_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "e2f9fe70ce52c74a4d6714ea703978ed7c832bb7d1e4a7e1414ed94cb1b39565"
 
       def install
         bin.install "glide"
@@ -28,17 +28,25 @@ class Glide < Formula
   end
 
   on_linux do
+    if Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+      url "https://github.com/einstack/glide/releases/download/0.0.2-rc.1/glide_v0.0.2-rc.1_linux_armv6.tar.gz", using: CurlDownloadStrategy
+      sha256 "809c5693e577110ff1c54c6d07667a66d10b3995594ef5ea69a526ca8098693c"
+
+      def install
+        bin.install "glide"
+      end
+    end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
-      sha256 "b9eef2729b89580d00c71c2f5e752dbd47d60f485773142edb0e7cd75e88f862"
+      url "https://github.com/einstack/glide/releases/download/0.0.2-rc.1/glide_v0.0.2-rc.1_linux_arm64.tar.gz", using: CurlDownloadStrategy
+      sha256 "348d09e22eec0ab467e8949f407f3f97af8e089ee88340330de2fd84ae5b88d4"
 
       def install
         bin.install "glide"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/einstack/glide/releases/download/0.0.1/glide_v0.0.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
-      sha256 "e3896754b2c5d52aa72d1aa4bc9d29368fc10886c2cc95b9e69e27e22b9abfdb"
+      url "https://github.com/einstack/glide/releases/download/0.0.2-rc.1/glide_v0.0.2-rc.1_linux_amd64.tar.gz", using: CurlDownloadStrategy
+      sha256 "92e88052fd7802b902e70f3c0102edc51c42b1a15434d029e5101061fd19941e"
 
       def install
         bin.install "glide"
